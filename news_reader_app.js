@@ -23,6 +23,9 @@ intent('Give me the news from $(source* (.*))', (p) => {
             return;
         }
         savedArticles = articles;
+        
+        p.play({command: 'newHEadlines',articles});
+        p.play('Here are the (latest|recent) ${p.source.value} news.');
     });
     
 })
